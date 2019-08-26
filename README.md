@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 **rosparam set usb_cam/image_height 720**
 
-**rosrun usb_cam usb_cam_node
+**rosrun usb_cam usb_cam_node**
 
 ## Step 5: Set up moveit
 
