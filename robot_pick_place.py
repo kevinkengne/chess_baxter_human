@@ -131,7 +131,8 @@ class BaxterSelfChess(object):
 
 def main():
     rospy.init_node('cube_test', anonymous=True)
-    player = BaxterSelfChess()  
-    player.print_joing_angles()
+    player = BaxterSelfChess() 
+    player.chess_moves_subscribing
+    
 if __name__ == '__main__':
   main()

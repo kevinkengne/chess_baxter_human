@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.6
-"""" Generates chess_moves for Baxter according to python-chess module and Stockfish engine.
+"""
+ Generates chess_moves for Baxter according to python-chess module and Stockfish engine.
+
 """
 
 import rospy
