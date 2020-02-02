@@ -47,7 +47,6 @@ class BaxterSelfChess(object):
         #  get a list of all the groups in thPickAndPlaceTutoriale robot:
         group_names = robot.get_group_names()
 
-
         #  get the name of the end-effector link for this group:
         eef_link = move_group.get_end_effector_link()
         # Misc variables
@@ -60,7 +59,6 @@ class BaxterSelfChess(object):
         self.group_names = group_names
         self.left_gripper = left_gripper
         
-
         # List of all chess the moves to be executed by the robot 
         # will be filled in by subscribing to the topic where 
         # chess_moves_generator.py publishes moves
@@ -87,7 +85,6 @@ class BaxterSelfChess(object):
 
 
     def make_chess_move(self, next_move):
-        #  executes a chess move
         first_location = next_move[:2]
         second_location = next_move[2:4]
 
@@ -112,8 +109,6 @@ class BaxterSelfChess(object):
         rospy.sleep(1.0)
 
     def clean_square(self, next_move):
-        # executes the capture of a chess piece 
-        # before a special chess move
         first_location = next_move[2:4]
 
         gripper = self.left_gripper
@@ -134,16 +129,9 @@ class BaxterSelfChess(object):
         move_group.go(outside_above)
         rospy.sleep(1.0)
 
-    def print_joing_angles(self):
-        # Used to take all the measurements 
-        move_group = self.move_group
-        print(move_group.get_current_joint_values())
-
-
 def main():
     rospy.init_node('cube_test', anonymous=True)
-    player = BaxterSelfChess()
-    #player.chess_moves_subscribing()    
+    player = BaxterSelfChess()  
     player.print_joing_angles()
 if __name__ == '__main__':
   main()

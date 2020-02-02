@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 ROOT_DIR = '../Mask_RCNN/'
-assert os.path.exists(ROOT_DIR), 'ROOT_DIR does not exist. Did you forget to read the instructions above? ;)'
+assert os.path.exists(ROOT_DIR), 'ROOT_DIR does not exist. Did you forget to read the instructions above?'
 
 # Import mrcnn libraries
 sys.path.append(ROOT_DIR) 
@@ -27,7 +27,7 @@ MODEL_DIR = os.path.join(ROOT_DIR, "logs")
 COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
 
 class CocoSynthConfig(Config):
-    """Configuration for training on the box_synthetic dataset.
+    """Configuration for training on the chess dataset.
     Derives from the base Config class and overrides specific values.
     """
     # Give the configuration a recognizable name
@@ -88,16 +88,13 @@ print("Loading weights from ", model_path)
 model.load_weights(model_path, by_name=True)
 
 def board_state_detection():
-    # Opening the json file containing the square labels
     square_labels = {}
-    # list of the square numbers that are full
     full_squares = []
-    # list of the square numbers that are empty
     empty_squares = []
+
     with open('image_paths.json') as json_file:
         square_labels = json.load(json_file)
     
-    # directory where square images are located
     real_test_dir = 'test/'
 
     image_paths = []
@@ -122,7 +119,6 @@ def board_state_detection():
     }
 
     with open('squares.json', 'w') as fp:
-        # Create a json file which will map each image to its respective integer according to the python-chess module
         json.dump(squares,fp, indent=4, sort_keys="True")
 
 def main():
