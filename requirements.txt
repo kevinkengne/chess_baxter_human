@@ -65,7 +65,7 @@ moveit-ros-visualization==0.9.17
 nbconvert==5.5.0
 nbformat==4.4.0
 networkx==2.3
-notebook==6.0.0
+notebook==6.1.5
 numpy==1.17.0
 pandocfilters==1.4.2
 parso==0.5.1
