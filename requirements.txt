@@ -58,7 +58,7 @@ Markdown==3.1.1
 MarkupSafe==1.1.1
 matplotlib==3.1.1
 message-filters==1.12.14
-mistune==0.8.4
+mistune==2.0.3
 moveit-commander==0.9.17
 moveit-ros-planning-interface==0.9.17
 moveit-ros-visualization==0.9.17
